@@ -30,7 +30,7 @@
         </classpath>
         <formatter type="brief" usefile="false" />
         <batchtest>
-            <fileset dir="${test.src.dir}" includes="Test_Correlation.java" />
+            <fileset dir="${test.src.dir}" includes="Test*.java" />
         </batchtest>
     </junit>
   </target>

@@ -1,5 +1,3 @@
-package Test_IntervalleConf;
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;

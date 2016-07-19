@@ -1,5 +1,3 @@
-package Test_RegLin;
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
