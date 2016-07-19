@@ -54,11 +54,11 @@ public class Calcs {
 		return sommeDistances;
 	}
 	
-	/** Les données de la liste qui ont un indice impair sont considérées comme la liste X
-	    et les données avec un indice pair consitutent la liste Y.
-	    La première donnée de la liste indique le nombre de données.
-	    i.e. lstFloat.get(1) donne la première donnée en X et
-	    lstFloat.get(2) donne la première donnée en Y.**/
+	/** Les donnees de la liste qui ont un indice impair sont considerees comme la liste X
+	    et les donnees avec un indice pair consitutent la liste Y.
+	    La premiere donnee de la liste indique le nombre de donnees.
+	    i.e. lstFloat.get(1) donne la premiere donnee en X et
+	    lstFloat.get(2) donne la premiere donnee en Y.**/
 	public static float Correlation(ArrayList<Float> listeX, ArrayList<Float> listeY){
 		
 		float corr = 0;
@@ -80,12 +80,12 @@ public class Calcs {
 			n = listeX.size();
 		}
 		
-		//Fait la somme des valeurs de X au carré
+		//Fait la somme des valeurs de X au carre
 		for (Float donnee : listeX) {
 			sommeXCarre = sommeXCarre + (donnee * donnee);
 		}
 		
-		//Fait la somme des valeurs de Y au carré
+		//Fait la somme des valeurs de Y au carre
 		for (Float donnee : listeY) {
 			sommeYCarre = sommeYCarre + (donnee * donnee);
 		}
@@ -181,7 +181,7 @@ public class Calcs {
 		b1 = (Somme(listeXfoisY)-(n*xMoy*yMoy))/(Somme(listeXCarre)-(n*xMoy*xMoy));
 		b0 = yMoy-(b1*xMoy);
 		
-		//Cette partie calcule l'écart-type
+		//Cette partie calcule l'ecart-type
 
 		for (int i = 0; i<listeX.size(); i++){
 			float donnee = listeY.get(i) - b0 - (b1*listeX.get(i));

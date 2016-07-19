@@ -66,25 +66,25 @@ public class VarianceView {
 	}
 	
 	/**
-	 * Met à jour les labels variance, écart-type et corrélation
+	 * Met a jour les labels variance, ecart-type et correlation
 	 * selon la checkbox choisie.
 	 */
 	public void updateDonnees(){
 		
 		if (chkListeSimple.isSelected()){
 			lblVariance.setText("Variance : " + varianceModel.getVariance());
-			lblEcartType.setText("Écart Type : " + varianceModel.getEcartType());
-			lblCorrelation.setText("Corrélation : ");
+			lblEcartType.setText("ecart Type : " + varianceModel.getEcartType());
+			lblCorrelation.setText("Correlation : ");
 			lblIntervalle.setText("Intervalle : ");
-			lblLimSup.setText("Limite supérieure : ");
-			lblLimInf.setText("Limite inférieure : ");
+			lblLimSup.setText("Limite superieure : ");
+			lblLimInf.setText("Limite inferieure : ");
 		} else if (chkListeDouble.isSelected()){
 			lblVariance.setText("Variance : ");
-			lblEcartType.setText("Écart Type : ");
-			lblCorrelation.setText("Corrélation : " + varianceModel.getCorrelation());
+			lblEcartType.setText("ecart Type : ");
+			lblCorrelation.setText("Correlation : " + varianceModel.getCorrelation());
 			lblIntervalle.setText("Intervalle : " + varianceModel.getIntervalle());
-			lblLimSup.setText("Limite supérieure : " + (900 - varianceModel.getIntervalle()));
-			lblLimInf.setText("Limite inférieure : " + (900 + varianceModel.getIntervalle()));
+			lblLimSup.setText("Limite superieure : " + (900 - varianceModel.getIntervalle()));
+			lblLimInf.setText("Limite inferieure : " + (900 + varianceModel.getIntervalle()));
 			lblFonctionRegression.setText(varianceModel.getRegression());
 		}
 		
@@ -109,15 +109,15 @@ public class VarianceView {
 		txtCalculAvecY = new JTextField("Y");
 		lblFichierChoisi = new JLabel("Aucun fichier choisi");
 		lblVariance = new JLabel("Variance : ");
-		lblEcartType = new JLabel("Écart Type : ");
-		lblCorrelation = new JLabel("Corrélation : ");
+		lblEcartType = new JLabel("ecart Type : ");
+		lblCorrelation = new JLabel("Correlation : ");
 		lblFonctionRegression = new JLabel("Fonction : ");
 		lblResultatX = new JLabel("y = ");
 		lblResultatY = new JLabel("x = ");
 		lblIntervalle = new JLabel("Intervalle : ");
-		lblLimInf = new JLabel("Limite inférieure : ");
-		lblLimSup = new JLabel("Limite supérieure : ");
-		lblNbrDonneesRecues = new JLabel("Données reçues : ");
+		lblLimInf = new JLabel("Limite inferieure : ");
+		lblLimSup = new JLabel("Limite superieure : ");
+		lblNbrDonneesRecues = new JLabel("Donnees reçues : ");
 		
 		panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.PAGE_AXIS));
 		
@@ -212,22 +212,22 @@ public class VarianceView {
 	}
 	
 	/**
-	 * Vide les labels variance, écart-type et corrélation
+	 * Vide les labels variance, ecart-type et correlation
 	 */
 	private void viderComposantes(){
 		
 		lblVariance.setText("Variance : ");
-		lblEcartType.setText("Écart Type : ");
-		lblNbrDonneesRecues.setText("Données reçues : ");
+		lblEcartType.setText("ecart Type : ");
+		lblNbrDonneesRecues.setText("Donnees reçues : ");
 		lblCorrelation.setText("Correlation : ");
 		lblIntervalle.setText("Intervalle : ");
-		lblLimInf.setText("Limite inférieure : ");
-		lblLimSup.setText("Limite supérieure : ");
+		lblLimInf.setText("Limite inferieure : ");
+		lblLimSup.setText("Limite superieure : ");
 	}
 	
 	/**
-	 * Extrait les données d'un fichier et les insères dans le ArrayList lstDonnees
-	 * puis met à jour les valeurs des labels variance, écart-type et corrélation.
+	 * Extrait les donnees d'un fichier et les inseres dans le ArrayList lstDonnees
+	 * puis met a jour les valeurs des labels variance, ecart-type et correlation.
 	 * @throws IOException 
 	 */
 	private void extraireDonnees(){
@@ -265,7 +265,7 @@ public class VarianceView {
 				viderComposantes();
 				
 				lblFichierChoisi.setText(fichier.getAbsolutePath());
-				lblNbrDonneesRecues.setText("Données reçues : ");
+				lblNbrDonneesRecues.setText("Donnees reçues : ");
 				
 				updateDonnees();
 			}
