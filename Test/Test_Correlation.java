@@ -1,5 +1,3 @@
-package Test_Correlation;
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -8,7 +6,7 @@ import org.junit.Test;
 
 import resources.Calcs;
 
-public class Test_Correlation {
+public class Test_Correlation extends TestCase{
 
 	@Test
 	public void TestBorneInf() {
