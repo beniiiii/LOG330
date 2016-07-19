@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import resources.Calcs;
 
-public class Test_Correlation extends TestCase{
+public class Test_Correlation{
 
 	@Test
 	public void TestBorneInf() {
