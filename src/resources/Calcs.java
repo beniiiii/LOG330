@@ -69,6 +69,10 @@ public class Calcs {
 		float sommeXCarre = 0;
 		float sommeYCarre = 0;
 		
+		if(!checkDonnees(listeX) || !checkDonnees(listeY) || listeX.size() != listeY.size()){
+			return -1;
+		}
+		
 		sommeX = Somme(listeX);
 		sommeY = Somme(listeY);
 		
@@ -85,7 +89,7 @@ public class Calcs {
 		for (Float donnee : listeY) {
 			sommeYCarre = sommeYCarre + (donnee * donnee);
 		}
-		
+
 		//Fait la somme de (Xi * Yi)
 		for(int i = 0; i < listeX.size(); i++){
 			sommeXMultipliY = sommeXMultipliY + (listeX.get(i) * listeY.get(i));
@@ -97,9 +101,18 @@ public class Calcs {
 	}
 	
 	public static Float[] Regression(ArrayList<Float> listeX, ArrayList<Float> listeY){
+		
+		
+		
 		Float[] regression = new Float[2];
 		float sommeXMultipliY = 0;
 		int n = listeX.size();
+		
+		if(!checkDonnees(listeX) || !checkDonnees(listeY)){
+			regression[0] = -1f;
+			regression[1] = -1f;
+			return regression;
+		}
 		
 		float moyenneX = Moyenne(listeX);
 		float moyenneY = Moyenne(listeY);
@@ -119,11 +132,18 @@ public class Calcs {
 	
 	public static float Variance(ArrayList<Float> lstFloat){
 		
+		if(!checkDonnees(lstFloat)){
+			return -1;
+		}
+		
 		return SommeDistance(lstFloat)/(lstFloat.size() - 1);
 	}
 	
 	public static float EcartType(ArrayList<Float> lstFloat){
 		
+		if(!checkDonnees(lstFloat)){
+			return -1;
+		}
 		return Racine(Variance(lstFloat));
 	}
 	
@@ -142,6 +162,10 @@ public class Calcs {
 		ArrayList<Float> listeXfoisY = new ArrayList<Float>(); 
 		ArrayList<Float> listeXiXmoy = new ArrayList<Float>();
 		ArrayList<Float> listeCalculEcartType = new ArrayList<Float>();
+		
+		if(!checkDonnees(listeX) || !checkDonnees(listeY)){
+			return -1;
+		}
 		
 		for (Float donnee : listeX) {
 			listeXCarre.add(donnee*donnee);
@@ -174,5 +198,17 @@ public class Calcs {
 		intervalle = Const.T*ecartType*racineIntervalle;
 		
 		return intervalle;
+	}
+	
+	public static boolean checkDonnees(ArrayList<Float> lstFloat){
+		boolean valide = true;
+		
+		for (Float donnee : lstFloat) {
+			if(donnee <= 0){
+				valide = false;
+			}
+		}
+		
+		return valide;
 	}
 }
