@@ -1,0 +1,17 @@
+<project>
+    <target name="test">
+        <delete dir="build" />
+
+        <mkdir dir="build" />
+        <javac includeantruntime="false" srcdir="src" destdir="build" />
+        <javac includeantruntime="false" srcdir="tests" destdir="build" classpath="/usr/share/java/junit.jar" />
+
+        <junit printsummary="on">
+            <classpath>
+                <pathelement location="build" />
+                <pathelement path="/usr/share/java" />
+            </classpath>
+            <test name="FactorizeTest" />
+        </junit>
+    </target>
+</project>
