@@ -8,7 +8,7 @@
   </path>
 
 
-  <target name="build" depends="compile">
+  <target name="compile">
     <mkdir dir="build/compile"/>
     <javac srcdir="src" destdir="build/compile"></javac>
     <echo message="Build done" />
@@ -16,7 +16,7 @@
    
   <!-- Test and build all files  -->
   <!-- To run this: use "ant" (default) or "ant run" -->
-  <target name="test" depends="build">
+  <target name="test" depends="compile">
     <junit printsummary="on" haltonfailure="yes">
         <classpath>
           <path refid="classpath.test" />
