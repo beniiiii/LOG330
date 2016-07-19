@@ -117,7 +117,7 @@ public class VarianceView {
 		lblIntervalle = new JLabel("Intervalle : ");
 		lblLimInf = new JLabel("Limite inferieure : ");
 		lblLimSup = new JLabel("Limite superieure : ");
-		lblNbrDonneesRecues = new JLabel("Donnees reçues : ");
+		lblNbrDonneesRecues = new JLabel("Donnees recues : ");
 		
 		panelPrincipal.setLayout(new BoxLayout(panelPrincipal, BoxLayout.PAGE_AXIS));
 		
@@ -218,7 +218,7 @@ public class VarianceView {
 		
 		lblVariance.setText("Variance : ");
 		lblEcartType.setText("ecart Type : ");
-		lblNbrDonneesRecues.setText("Donnees reçues : ");
+		lblNbrDonneesRecues.setText("Donnees recues : ");
 		lblCorrelation.setText("Correlation : ");
 		lblIntervalle.setText("Intervalle : ");
 		lblLimInf.setText("Limite inferieure : ");
@@ -265,7 +265,7 @@ public class VarianceView {
 				viderComposantes();
 				
 				lblFichierChoisi.setText(fichier.getAbsolutePath());
-				lblNbrDonneesRecues.setText("Donnees reçues : ");
+				lblNbrDonneesRecues.setText("Donnees recues : ");
 				
 				updateDonnees();
 			}
